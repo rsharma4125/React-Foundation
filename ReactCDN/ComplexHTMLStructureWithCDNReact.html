@@ -6,19 +6,18 @@
     <title>React via CDN</title>
     <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-    <!-- Here babel is added for JSX and ES6 syntaxing -->
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 </head>
 <body>
-    <div id="root"></div>
+    <div id="root">
+        <!-- Lets Try to convert a nested component into react -->
+    </div>
 
-    <script type="text/babel">
-        function App() {    
-            return <h1>Hello, React via CDN!</h1>;
-        }
-
+    <script>
+        const ReactEle1 = React.createElement("h2",{id:"id_val1"},"React Element 1");
+        const ReactEle2 = React.createElement("h2",{id:"id_val2"},"React Element 2");
+        const Container = React.createElement("div",{},[ReactEle1,ReactEle2]);
         const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<App />);
+        root.render(Container);
     </script>
 </body>
 </html>

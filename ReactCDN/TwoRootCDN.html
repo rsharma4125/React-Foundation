@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React via CDN</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+</head>
+<body>
+    <div id="root1">
+        This is root 1
+    </div>
+    <div id="root2">
+        This is root 2
+    </div>
+
+    <script>
+        const ReactEle1 = React.createElement("h2",{id:"id_val1"},"React Element 1");
+        const ReactEle2 = React.createElement("h2",{id:"id_val2"},"React Element 2");
+        const Container1 = React.createElement("div",{id:"divMain"},[ReactEle1,ReactEle2]);
+        const Container2 = React.createElement("div",{id:"id_val3"},[ReactEle1]);
+        const root1 = ReactDOM.createRoot(document.getElementById('root1'));
+        const root2 = ReactDOM.createRoot(document.getElementById('root2'));
+        root1.render(Container1);
+        root2.render(Container2);
+    </script>
+</body>
+</html>

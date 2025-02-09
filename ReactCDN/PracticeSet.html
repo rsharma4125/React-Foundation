@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React via CDN</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+</head>
+<body>
+    <div id="root">
+        <!-- Lets Try to convert a nested component into react -->
+    </div>
+
+    <script>
+        const ReactEle1 = React.createElement("h2",{id:"id_val1"},"React Element 1");
+        const ReactEle2 = React.createElement("h2",{id:"id_val2"},"React Element 2");
+        const Container1 = React.createElement("div",{id:"id_val3"},ReactEle1);
+        const Container = React.createElement("div",{id:"divMain"},[[ReactEle1,[ReactEle2]],[Container1]]);
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(Container);
+    </script>
+</body>
+</html>
